@@ -19,6 +19,7 @@
         toPng: toPng,
         toJpeg: toJpeg,
         toBlob: toBlob,
+        toCanvas: toCanvas,
         toPixelData: toPixelData,
         impl: {
             fontFaces: fontFaces,
@@ -108,6 +109,19 @@
         return draw(node, options || {})
             .then(function (canvas) {
                 return canvas.toDataURL();
+            });
+    }
+
+
+    /**
+     * @param {Node} node - The DOM Node object to render
+     * @param {Object} options - Rendering options, @see {@link toSvg}
+     * @return {Promise} - A promise that is fulfilled with a Canvas
+     * */
+    function toCanvas(node, options) {
+        return draw(node, options || {})
+            .then(function (canvas) {
+                return canvas;
             });
     }
 
