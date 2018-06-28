@@ -169,7 +169,7 @@
             .then(util.delay(100))
             .then(function (image) {
                 var canvas = newCanvas(domNode);
-                canvas.getContext('2d').drawImage(image, 0, 0);
+                canvas.getContext('2d').drawImage(image, 0, 0, options.canvas_width, options.canvas_height);
                 return canvas;
             });
 
